@@ -1,0 +1,186 @@
+*{
+    margin :0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.container{
+    margin: auto;
+    width: 80vw;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+    gap:1rem;
+   
+}
+
+.container h1{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.sect{
+ /* border:1px solid red; */
+ width:40rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+#input{
+    width:25rem;
+    border:1px solid lightgray;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-top-left-radius:10px;
+    border-bottom-left-radius: 10px;
+}
+
+#input:focus{
+    border:3.5px solid blue;
+}
+
+#del-btn{
+    margin-left: -5px;
+}
+
+.btn{
+    background-color: #E8AFCC;
+    padding: 12px;
+    outline: none;
+    /* border:1px solid lightgray;  */
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn:hover{
+    background-color:#97BBE8;
+}
+
+.tasks{
+    /* border: 1px solid red; */
+    width: 40rem;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+/***********TASKs*********/
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: .5rem;
+    background-color: #fff;
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding:.5rem;
+    border-radius: 10px;
+}
+
+.task:hover{
+    box-shadow: 0 0 15px #241c20;
+    border: 1px solid blue;
+}
+
+.task button{
+    background-color:#E8AFCC ;
+    border: none;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.task .fa-circle-check{
+    transition: all 1s;
+}
+
+.task .fa-circle-check:hover{
+   color: limegreen;
+}
+
+.task .fa-check-double:hover{
+   color: brown;
+}
+
+.task .fa-trash-can{
+    transition: all 1s;
+}
+
+.task .fa-trash-can:hover{
+    color:red;
+}
+
+.task i{
+    color:white;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 1.5rem;
+}
+
+.linethrough{
+    text-decoration: line-through;
+}
+
+/***********Responsive*******/
+
+@media  screen and (max-width:1180px) {
+    
+    .container {
+        flex-direction: column;    
+    }
+
+    .container h1{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .sect{
+        width:100%;
+    }
+
+    .task{
+        width:80%;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+@media  screen and (max-width:650px) {
+    .sect{
+        width:100%;
+        flex-direction: column;
+        gap:1rem;
+        margin: auto;
+    }
+
+    #input{
+        border-radius: 10px;
+        width:15rem;
+    }
+
+    .buttons .btn{
+        margin: 0 25px;
+    }
+
+    .tasks{
+        width: 80%;
+    }
+    .task{
+        width:100%;
+        font-size: 1rem;
+    }
+
+    .task button{
+        padding: 1px;
+    }
+
+    .task button i{
+        padding: 3px;
+        font-size: .7rem;
+    }
+}
