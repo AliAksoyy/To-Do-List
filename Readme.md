@@ -14,7 +14,7 @@
 
 <hr>
 
-[📍click here to see page](https://yasinsutoglu.github.io/To-Do-List/)
+[📍click here to see page]( https://aliaksoyy.github.io/To-Do-List/)
 
 <!-- ------------------------------------------------------ -->
 
@@ -62,7 +62,7 @@ To Do List(folder)
 <hr>
 <h3>How to Use the Project</h3>
 <span>First download a code editor </span>
-<br><span>Second open the files : </span><a href='https://github.com/yasinsutoglu/parallax-page'>My Docs</a>
+<br><span>Second open the files : </span><a href=' https://aliaksoyy.github.io/To-Do-List/'>My Docs</a>
 <br><span>You can use this tutorial : </span><a href='https://www.youtube.com/watch?v=fJEbVCrEMSE'>VS Code tutorial</a>
 
 <!-- ------------------------------------------------------------------------- -->
@@ -108,8 +108,8 @@ Feel free to check [issues page](https://github.com/kefranabg/readme-md-generato
 <!-- ------------------------------------------------------------------------------------- -->
 ## Author
 
-👤 **Yasin Sutoglu**
+👤 **Ali Aksoy**
 
-- Twitter: [@YsnStgl](https://twitter.com/YsnStgl)
-- Github: [@yasinsutoglu](https://github.com/yasinsutoglu)
+- Twitter: [@alifeyza4017](https://twitter.com/alifeyza4017)
+- Github: [@AliAksoyy](https://github.com/AliAksoyy)
 
