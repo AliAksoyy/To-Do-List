@@ -41,16 +41,33 @@ addBtn.addEventListener("click", () => {
 
     trash.forEach((el) => {
         el.addEventListener("click", ()=> {
-            if(el.parentElement.parentElement.classList.contains("task")) {
+                    el.parentElement.parentElement.remove();
+            // if(el.parentElement.parentElement.classList.contains("task")) {
+            //     el.parentElement.parentElement.remove()
+            // }else {
         
-            }
+            // }
         })
     })
+    }
+})
+function insertAfter(newNode, existingNode) {
+  existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}
 
-    
+delBtn.addEventListener("click",function() {
+    if(document.querySelector(".container").nextElementSibling.classList.contains("tasks")) {
+        let tasks =document.querySelector(".tasks")
+        tasks.remove()
+    } else {
+        alert("silinecek bir şey yok")
+        let newTasks = document.createElement("div")
+        newTasks.classList.add("tasks")
+        insertAfter(newTasks,container)
+        input.focus()
     }
 })
 
-window.addEventListener("load", ()=> {
+window.addEventListener("load", function() {
     input.focus()
 })
