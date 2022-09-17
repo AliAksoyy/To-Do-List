@@ -26,7 +26,7 @@ To Do List(folder)
 |----img           
 |----solution
         |----index.html  
-        |----style.css 
+        |----app.css 
         |----app.js  
 ```
 
