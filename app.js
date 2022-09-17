@@ -39,6 +39,14 @@ addBtn.addEventListener("click", () => {
         
     })
 
+    trash.forEach((el) => {
+        el.addEventListener("click", ()=> {
+            if(el.parentElement.parentElement.classList.contains("task")) {
+        
+            }
+        })
+    })
+
     
     }
 })
