@@ -1,73 +1,84 @@
-// DOM Elements
+//DOM Elements
+const addTask = document.getElementById("add-btn");
+const delTask = document.getElementById("del-btn");
+const inputTask = document.getElementById("input");
+const body = document.querySelector("body");
+const container = document.querySelector(".container");
 
-const addBtn = document.querySelector("#add-btn")
-const delBtn = document.querySelector("#del-btn")
-const input  = document.querySelector("#input")
-const tasks = document.querySelector(".tasks");
+//EVENTS
+//add button event
+addTask.addEventListener("click", () => {
+  // console.log(document.querySelector("body").children)
+  const taskDiv = document.querySelector(".tasks");
 
-
-addBtn.addEventListener("click", () => {
-    if(!input.value) {
-        alert("bir şeyler yazınız")
-    }else {
-        let task = document.createElement("div")
-        task.className ="task"
-        tasks.appendChild(task)
-        task.innerHTML = `<p>${input.value}</p>
+  let task = document.createElement("div");
+  task.className = "task";
+  task.innerHTML = `<p>${inputTask.value}</p>
                         <div>
-                        <button class="checked"><i class="fa-solid fa-circle-check"></i></button>
-                        <button class="unchecked"><i class="fa-solid fa-check-double"></i></button>
-                        <button class="trash"><i class="fa-solid fa-trash-can"></i></button>
-                        </div>`;
+                            <button class="checked"><i class="fa-solid fa-circle-check"></i></button>
+                            <button class="unchecked"><i class="fa-solid fa-check-double"></i></button>
+                            <button class="trash"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    `;
 
-    input.value=""
-    input.focus()
-    const checked =document.querySelectorAll(".checked")
-    const unchecked =document.querySelectorAll(".unchecked")
-    const trash =document.querySelectorAll(".trash")
+  if (!inputTask.value) {
+    alert("Enter Something");
+  } else {
+    taskDiv.appendChild(task);
+  }
 
-    checked.forEach((el) => {
-        el.addEventListener("click", ()=> {
-            el.parentElement.parentElement.firstElementChild.classList.add("linethrough")
-        })
+  inputTask.value = "";
+  inputTask.focus();
+
+  const checkeds = document.querySelectorAll(".checked");
+  const uncheckeds = document.querySelectorAll(".unchecked");
+  const trashes = document.querySelectorAll(".trash");
+
+  checkeds.forEach((el) =>
+    el.addEventListener("click", () => {
+      el.parentElement.parentElement.firstElementChild.classList.add(
+        "linethrough"
+      );
     })
+  );
 
-    unchecked.forEach((el) => {
-        el.addEventListener("click", ()=> {
-            el.parentElement.parentElement.firstElementChild.className =""
-        })
-        
+  uncheckeds.forEach((c) =>
+    c.addEventListener("click", () => {
+      c.parentElement.previousElementSibling.classList.remove("linethrough");
     })
+  );
 
-    trash.forEach((el) => {
-        el.addEventListener("click", ()=> {
-                    el.parentElement.parentElement.remove();
-            // if(el.parentElement.parentElement.classList.contains("task")) {
-            //     el.parentElement.parentElement.remove()
-            // }else {
-        
-            // }
-        })
+  trashes.forEach((el) =>
+    el.addEventListener("click", (e) => {
+      e.target.parentElement.parentElement.parentElement.remove(); // removing task element done
+      inputTask.focus();
     })
-    }
-})
-function insertAfter(newNode, existingNode) {
-  existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+  );
+});
+
+//Inserting an element after an element
+function insertAfter(newNode, referenceNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-delBtn.addEventListener("click",function() {
-    if(document.querySelector(".container").nextElementSibling.classList.contains("tasks")) {
-        let tasks =document.querySelector(".tasks")
-        tasks.remove()
-    } else {
-        alert("silinecek bir şey yok")
-        let newTasks = document.createElement("div")
-        newTasks.classList.add("tasks")
-        insertAfter(newTasks,container)
-        input.focus()
-    }
-})
+//complete deletion
+delTask.addEventListener("click", () => {
+  if (
+    document
+      .querySelector(".container")
+      .nextElementSibling.classList.contains("tasks")
+  ) {
+    let tasks = document.querySelector(".tasks");
+    tasks.remove();
+  } else {
+    alert("There is no one to erased!");
+    let taskDiv = document.createElement("div");
+    taskDiv.className = "tasks";
+    insertAfter(taskDiv, container);
+    inputTask.focus();
+  }
+});
 
-window.addEventListener("load", function() {
-    input.focus()
-})
+window.addEventListener("load", function () {
+  input.focus();
+});
